@@ -1,8 +1,22 @@
-# React + Vite
+# Web app using Reddit API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech stack
 
-Currently, two official plugins are available:
+- React 18.2.0
+- React-Router-Dom v6.18.0
+- React Redux
+- TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project requirements
+
+- Unit testing with Jest
+- End-to-end tests with Cypress
+- Responsive (desktop to mobile)
+- Accessible on any modern browser
+- Accessible at a URL
+- Initial data is displayed when first visiting the app
+- Users can search the data using terms
+- Users are shown a modal with a detailed view of a selected item
+- Users are presented a cohesive design system
+- Switching between pages triggers an animation
+- Web app gets 90+ scores on Lighthouse
