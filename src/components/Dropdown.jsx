@@ -1,25 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import ROUTES from "../ROUTES";
 
 function Dropdown() {
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const categories = [
-    "Gaming",
-    "News",
-    "Politics",
-    "Programing",
-    "Science",
-    "Technology",
-  ];
+  const { GAMING, NEWS, POLITICS, SPORTS, TECH, SCIENCE } = ROUTES;
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        const dropdownContent = document.querySelector(".absolute");
-        dropdownContent.classList.add("hidden");
         setIsOpen(false);
       }
     };
@@ -31,9 +24,6 @@ function Dropdown() {
   }, []);
 
   function toggleDropdown() {
-    const dropdownContent = document.querySelector(".absolute");
-    const icon = document.getElementById("icon");
-    dropdownContent.classList.toggle("hidden");
     setIsOpen(!isOpen);
   }
 
@@ -56,21 +46,23 @@ function Dropdown() {
       </h2>
       {/* invisible dropdown content */}
       <div
-        className={`absolute flex-col gap-4 p-4 shadow-lg bg-white mt-4 w-44 transition ${
-          isOpen ? "flex" : "hidden"
+        className={`absolute shadow-lg bg-white mt-4 transition-all duration-300 overflow-hidden ${
+          isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        {categories.map((category) => (
-          <h2
-            key={category}
-            className="text-md text-orange-500 font-bold border-orange-200 border-b-4 hover:border-orange-400 transition hover:cursor-pointer"
-          >
-            {category}
-          </h2>
-        ))}
+        <div className="flex flex-col gap-4 p-4">
+          <Link to={GAMING}>Gaming</Link>
+          <Link to={NEWS}>News</Link>
+          <Link to={POLITICS}>Politics</Link>
+          <Link to={SPORTS}>Sports</Link>
+          <Link to={TECH}>Technology</Link>
+          <Link to={SCIENCE}>Science</Link>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Dropdown;
+
+// className="text-md text-orange-500 border-orange-200 border-b-4 hover:border-orange-400 transition hover:cursor-pointer"
