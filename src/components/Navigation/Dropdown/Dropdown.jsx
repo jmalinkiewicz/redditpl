@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import ROUTES from "../ROUTES";
+import ROUTES from "../../../ROUTES";
+import DropdownLink from "./DropdownLink";
 
 function Dropdown() {
   const dropdownRef = useRef(null);
@@ -32,7 +33,7 @@ function Dropdown() {
       <h2
         id="text"
         onClick={toggleDropdown}
-        className={`text-md text-orange-500 font-bold border-orange-200 border-b-4 hover:border-orange-400 transition hover:cursor-pointer ${
+        className={`text-md text-orange-500 font-bold border-orange-200 border-b-4 hover:border-orange-400 transition duration-75 hover:cursor-pointer ${
           isOpen ? "border-orange-400" : ""
         }`}
       >
@@ -51,12 +52,12 @@ function Dropdown() {
         }`}
       >
         <div className="flex flex-col gap-4 p-4">
-          <Link to={GAMING}>Gaming</Link>
-          <Link to={NEWS}>News</Link>
-          <Link to={POLITICS}>Politics</Link>
-          <Link to={SPORTS}>Sports</Link>
-          <Link to={TECH}>Technology</Link>
-          <Link to={SCIENCE}>Science</Link>
+          <DropdownLink ROUTE={GAMING} name="Gaming" />
+          <DropdownLink ROUTE={NEWS} name="News" />
+          <DropdownLink ROUTE={POLITICS} name="Politics" />
+          <DropdownLink ROUTE={SPORTS} name="Sports" />
+          <DropdownLink ROUTE={TECH} name="Tech" />
+          <DropdownLink ROUTE={SCIENCE} name="Science" />
         </div>
       </div>
     </div>
@@ -64,5 +65,3 @@ function Dropdown() {
 }
 
 export default Dropdown;
-
-// className="text-md text-orange-500 border-orange-200 border-b-4 hover:border-orange-400 transition hover:cursor-pointer"

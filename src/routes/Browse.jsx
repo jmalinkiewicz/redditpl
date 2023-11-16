@@ -1,7 +1,14 @@
+import Post from "../components/Post/Post";
+
+// display initial content when the web app is first opened
+// TODO: replace mock content with real data
+
 function Browse() {
   return (
     <div>
-      <h1>Browse</h1>
+      <Post />
+      <Post />
+      <Post />
     </div>
   );
 }
