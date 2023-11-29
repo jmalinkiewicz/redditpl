@@ -8,7 +8,7 @@ function Post() {
     "https://preview.redd.it/pis-rozpoczyna-walk%C4%99-z-lud%C5%BAmi-kt%C3%B3rzy-prostuj%C4%85-ich-v0-zvjafc7q3i0c1.png?width=584&format=png&auto=webp&s=46897b33e105b4f2bc320c4ce47a69b387836dc6";
 
   return (
-    <div className="m-auto w-2/5 shadow-xl p-8">
+    <div className="m-auto w-11/12 md:w-3/5 lg:w-3/6 xl:w-2/5 shadow-xl p-8">
       <div className="flex">
         <div className="flex flex-col mt-6 mr-6">
           <FontAwesomeIcon icon={faArrowUp} style={{ color: "#000000" }} />
