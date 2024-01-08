@@ -21,6 +21,8 @@ function Navbar() {
 
   function toggleNavbarMobile() {
     setShowNavbarMobile(!showNavbarMobile);
+    const body = document.querySelector("body");
+    body.style.position = showNavbarMobile ? "static" : "fixed";
   }
 
   return (

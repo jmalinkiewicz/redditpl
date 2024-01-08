@@ -27,10 +27,7 @@ function Post() {
           </p>
         </div>
       </div>
-      <div
-        className="w-full overflow-hidden relative mt-8"
-        style={{ height: 550 }}
-      >
+      <div className="w-full max-h-[600px] overflow-hidden relative mt-8">
         <img
           className="w-full h-full object-cover blur-lg scale-125"
           src={src}
